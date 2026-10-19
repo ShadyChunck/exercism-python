@@ -81,3 +81,6 @@ def complex(real = 0.0, imag = 0.0):
     complex_zero = 0.0
     if imag == 0.0 and real == 0.0:
         return complex_zero
+
+# We can use the .__doc__ after the name of the function to access to the docstrings.
+
