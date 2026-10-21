@@ -75,10 +75,11 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     """
 
     measurement = float(temperature * neutrons_produced_per_second)
-    
+    minus_threshold = threshold * 0.9
+    positive_threshold = threshold * 1.1
     if measurement < threshold * 0.90:
         return "LOW"
-    elif (measurement <= threshold * 0.10) and (measurement > 0):
+    elif minus_threshold <= measurement <= positive_threshold:
         return "NORMAL"
     else:
         return "DANGER"
